@@ -1,57 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Emotion-Aware AI Tutor</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emotion-Aware AI Tutor (Simulation)</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Emotion-Aware AI Tutor</h1>
-      <p class="sub">Select a subject, then click <strong>Start Lesson</strong>. Allow camera when prompted.</p>
-    </header>
+  <header>
+    <h1>Emotion-Aware AI Tutor (Demo)</h1>
+    <p>Select a subject and click <strong>Start Lesson</strong>.</p>
+  </header>
 
-    <main>
-      <section class="choose">
-        <div class="card" onclick="pick('os')">
-          <h3>Operating Systems</h3>
-          <p>Processes, Scheduling, Memory.</p>
-        </div>
-        <div class="card" onclick="pick('adsa')">
-          <h3>ADSA</h3>
-          <p>Algorithms & Data Structures — concise lessons.</p>
-        </div>
-        <div class="card" onclick="pick('java')">
-          <h3>Java</h3>
-          <p>OOP, Threads, Collections.</p>
-        </div>
-      </section>
+  <main>
+    <section class="choose">
+      <button onclick="pick('os')">Operating Systems</button>
+      <button onclick="pick('adsa')">ADSA</button>
+      <button onclick="pick('java')">Java</button>
+    </section>
 
-      <section class="controls">
-        <button id="startBtn" onclick="startLesson()" disabled>Start Lesson</button>
-        <button id="backBtn" onclick="goBack()" style="display:none">Back</button>
-      </section>
+    <section class="controls">
+      <button id="startBtn" onclick="startLesson()" disabled>Start Lesson</button>
+      <button id="backBtn" onclick="goBack()" style="display:none;">Back</button>
+    </section>
 
-      <section class="ai-area" style="display:none">
-        <div class="video-wrap">
-          <video id="video" width="480" height="360" autoplay muted></video>
-          <canvas id="overlay"></canvas>
-        </div>
-        <div class="status-box">
-          <p id="status">Waiting...</p>
-          <p id="lessonText"></p>
-        </div>
-      </section>
-    </main>
+    <section class="ai-area" style="display:none;">
+      <div class="simulated-box">
+        <p id="status">Waiting...</p>
+        <p id="lessonText"></p>
+      </div>
+    </section>
+  </main>
 
-    <footer>
-      <p>© Emotion-Aware AI Tutor — demo. Respect privacy: always ask consent before using camera.</p>
-    </footer>
-  </div>
+  <footer>© Demo version — No live camera or biometric data used.</footer>
 
-  <!-- face-api.js from CDN -->
   <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
   <script defer src="script.js"></script>
 </body>
